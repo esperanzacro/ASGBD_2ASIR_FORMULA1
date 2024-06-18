@@ -1,0 +1,53 @@
+-- Enunciado
+
+He decidido que sería una buena opción calcular sobre el campo num_aforo de la tabla tb_circuitos cuál ha sido el porcentaje de ocupación de ese aforo, para saber a ciencia cierta el % de ocupación y saber que circuito ha sido al que más gente ha acudido.
+
+¡RECORDATORIO! REALIZAR LA INSERCIÓN ANTES DE CREAR LOS CAMPOS PARA QUE LUEGO NO HAYA NINGÚN PROBLEMA!!!
+
+-- Modificaciones necesarias para el ejercicio
+
+- Añadir el campo num_aforo_ocupado a la tabla tb_circuitos
+
+ALTER TABLE tb_circuitos
+ALTER COLUMN num_aforo_ocupado NUMERIC(10);
+
+- Añadir el campo porcentaje_ocupacion a la tabla tb_circuitos
+
+ALTER TABLE tb_circuitos
+ADD porcentaje_ocupacion DECIMAL(5,2);
+
+-- Trigger
+
+use bd_f1_sergio_ivan_raul;
+go
+
+CREATE OR ALTER TRIGGER trigger_actualizar_porcentaje_ocupacion
+ON tb_circuitos
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    UPDATE c
+    SET porcentaje_ocupacion = (CONVERT(DECIMAL(7,2), c.num_aforo_ocupado) / CONVERT(DECIMAL(7,2), c.num_aforo)) * 100
+    FROM tb_circuitos c
+    INNER JOIN inserted i ON c.id_circuito = i.id_circuito;
+END;
+
+-- Insercion 
+
+INSERT INTO tb_circuitos
+VALUES
+	('ES-24', 'Montmeló', 1111, 66, 4.67, '00:01:27.189', 50000),
+	('BE-24', 'Spa Francorchamps', 2222, 47, 7.23, '00:01:48.984', 45000),
+	('IT-24', 'Monza', 3333, 72, 2.67, '00:01:11.175', 76000),
+	('LV-24', 'Las Vegas', 4444, 71, 4.10, '00:01:50.202', 35000),
+	('AS-24', 'Albert Park', 4444, 53, 3.14, '00:01:34.112', 88711);
+
+-- Update de la insercion
+
+	update tb_circuitos
+	set num_aforo_ocupado = 45000
+	where id_circuito IN ('BE-24', 'ES-24', 'IT-24');
+
+select * from tb_circuitos;

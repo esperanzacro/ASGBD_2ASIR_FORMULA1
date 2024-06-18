@@ -1,0 +1,95 @@
+use bd_f1_sergio_ivan_raulprueba2
+
+
+SET STATISTICS TIME ON;
+SELECT 
+    pes.nombre_piloto AS Nombre,
+    pes.apellido1_piloto AS Apellido,
+    pes.superlicencia AS Superlicencia,
+    esc.nombre_escuderia AS Escuderia,
+    cir.nombre_circuito AS Circuito,
+    gp.fecha_carrera AS Fecha_Carrera
+FROM 
+    tb_piloto_escuderia_circuito_participa_gran_premio pecp
+JOIN 
+    tb_pilotos pes ON pecp.superlicencia = pes.superlicencia
+JOIN 
+    tb_escuderias esc ON pecp.id_escuderia = esc.id_escuderia
+JOIN 
+    tb_circuitos cir ON pecp.id_circuito = cir.id_circuito
+JOIN 
+    tb_gran_premio gp ON pecp.id_gp = gp.id_gp
+WHERE 
+    pes.num_victorias > 0 and esc.id_escuderia  like 'E007'
+
+
+CREATE INDEX idx_tbpilesccirpartgp_composite ON tb_piloto_escuderia_circuito_participa_gran_premio(superlicencia, id_gp, id_circuito, id_escuderia);
+exec sp_helpindex tb_piloto_escuderia_circuito_participa_gran_premio
+--DROP INDEX idx_tbpilesccirpartgp_composite ON tb_piloto_escuderia_circuito_participa_gran_premio;
+
+
+--
+
+SELECT 
+    m.id_motor,
+    m.marca AS Marca_Motorista,
+    e.id_escuderia,
+    e.nombre_escuderia AS Nombre_Escuderia,
+    e.nombre_jefe AS Jefe_Escuderia
+FROM 
+    tb_motoristas m
+INNER JOIN 
+    tb_escuderias e ON m.id_motor = e.id_motor
+WHERE 
+    m.marca = 'MERCEDES';
+
+	CREATE INDEX idx_motorista_escuderia ON tb_motoristas (marca);
+	exec sp_helpindex tb_motoristas
+	--DROP INDEX idx_motorista_escuderia ON tb_motoristas;
+
+
+
+SELECT 
+    nombre_piloto,
+    apellido1_piloto,
+    apellido2_piloto,
+    num_victorias,
+    (SELECT MAX(num_victorias) FROM tb_pilotos) - num_victorias AS diferencia_victorias
+FROM 
+    tb_pilotos;
+
+	CREATE INDEX idx_num_victorias ON tb_pilotos (num_victorias);
+	exec sp_helpindex tb_pilotos
+	--DROP INDEX  idx_num_victorias ON tb_pilotos
+
+	SELECT  
+    nombre_piloto,
+    apellido1_piloto,
+    apellido2_piloto,
+    num_victorias,
+    num_carreras,
+    num_victorias - num_carreras AS diferencia_victorias_carreras
+FROM 
+    tb_pilotos
+ORDER BY 
+    diferencia_victorias_carreras DESC;
+
+	CREATE INDEX idx_num_carreras ON tb_pilotos (num_carreras);
+	exec sp_helpindex tb_pilotos
+	--DROP INDEX  idx_num_carreras ON tb_pilotos
+
+	SELECT 
+    nombre_circuito,
+    km_circuitos,
+    vuelta_rapida
+FROM 
+    tb_circuitos
+WHERE 
+    km_circuitos > 6.0
+ORDER BY 
+    km_circuitos DESC;
+
+
+	CREATE INDEX idx_km_circuitos ON tb_circuitos (km_circuitos);
+	exec sp_helpindex tb_circuitos
+	--DROP INDEX idx_km_circuitos ON tb_circuitos

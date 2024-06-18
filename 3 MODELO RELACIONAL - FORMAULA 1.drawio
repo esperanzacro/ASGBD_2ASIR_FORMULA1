@@ -1,0 +1,183 @@
+<mxfile host="Electron" modified="2024-06-18T10:12:50.320Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.2.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="q8vw_kVm-5OHNEzVeD3m" version="24.2.5" type="device">
+  <diagram id="1BrDnPlsbuEEoH79j7YI" name="MODELO RELACIONAL">
+    <mxGraphModel dx="1947" dy="532" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_P7isNc2VPUhs7asRugc-1" value="TB_PILOTOS" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-800" y="315" width="370" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-2" value="PK (SUPERLICENCIA): NUMERIC (5) NOT NULL UNIQUE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-1" vertex="1">
+          <mxGeometry y="30" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-3" value="NOMBRE_PILOTO:&amp;nbsp;CADENA CARACTERES (50) NOT NULL&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-1" vertex="1">
+          <mxGeometry y="60" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-4" value="APELLIDO1_PILOTO:CADENA CARACTERES (50) NOT NULL&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-1" vertex="1">
+          <mxGeometry y="90" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-5" value="APELLIDO2_PILOTO:&amp;nbsp;CADENA CARACTERES (50)NULL&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-1" vertex="1">
+          <mxGeometry y="120" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-6" value="PESO_KG: DECIMAL(3,1) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-1" vertex="1">
+          <mxGeometry y="150" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-7" value="ALTURA_CM: NUMERIC(3) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-1" vertex="1">
+          <mxGeometry y="180" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-8" value="NUM_CARRERAS: NUMERIC(4) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-1" vertex="1">
+          <mxGeometry y="210" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-9" value="NUM_VICTORIAS: NUMERIC(3) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-1" vertex="1">
+          <mxGeometry y="240" width="370" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-10" value="TB_ESCUDERIAS" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-340" y="840" width="320" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-11" value="PK (ID_ESCUDERIA): CADENA DE CARACTERES (5) NOT NULL UNIQUE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-10" vertex="1">
+          <mxGeometry y="30" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-12" value="ID_MOTOR:CADENA DE CARACTERES (5)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-10" vertex="1">
+          <mxGeometry y="60" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-13" value="NOMBRE_ESCUDERÍA: CADENA DE CARACTERES (50) NOT NULL UNIQUE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-10" vertex="1">
+          <mxGeometry y="90" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-14" value="NOMBRE_JEFE: CADENA DE CARACTERES (50) NOT NULL&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-10" vertex="1">
+          <mxGeometry y="120" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-15" value="ANO_CREACION_ESCUDERIA: DATE (AAAA/MM/DD)&lt;br&gt;&amp;nbsp;NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-10" vertex="1">
+          <mxGeometry y="150" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-16" value="NUM_PILOTOS: NUMERIC(1) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-10" vertex="1">
+          <mxGeometry y="180" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-17" value="ID_MOTOR ES FK DE TABLA TB_MOTORISTAS (ID_MOTOR)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-10" vertex="1">
+          <mxGeometry y="210" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-18" value="TB_CIRCUITOS" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-390" y="315" width="360" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-19" value="PK (ID_CIRCUITO):CADENA DE CARACTERES (5) 2 LETRAS-2NUMEROS [ES-01] NOT NULL UNIQUE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-18" vertex="1">
+          <mxGeometry y="30" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-20" value="NOMBRE_CIRCUITO: CADENA DE CARACTERES (50) NOT NULL UNIQUE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-18" vertex="1">
+          <mxGeometry y="60" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-21" value="DIRECCION" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-18" vertex="1">
+          <mxGeometry y="90" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-22" value="NUM_VUELTAS: NUMERIC (2) NOT NULL&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-18" vertex="1">
+          <mxGeometry y="120" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-23" value="KM_CIRCUITO: DECIMAL(4,3) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-18" vertex="1">
+          <mxGeometry y="150" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-24" value="DIRECCION ES FK DE TABLA TB_DIRECCION (DIRECCION)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-18" vertex="1">
+          <mxGeometry y="180" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-25" value="VUELTA RAPIDA: time NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-18" vertex="1">
+          <mxGeometry y="210" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-26" value="NUM_AFORO: numeric (5) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-18" vertex="1">
+          <mxGeometry y="240" width="360" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-27" value="TB_MOTORISTAS" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-402.5" y="600" width="385" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-28" value="PK (ID_MOTOR): CADENA DE CARACTERES (5) NOT NULL UNIQUE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-27" vertex="1">
+          <mxGeometry y="30" width="385" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-29" value="MARCA: cadena de caracteres (20) LISTA (&quot;HONDA&quot;, &quot;FERRARI&quot;, &quot;MERCEDES&quot;, &quot;RENAULT&quot;, &quot;AUDI&quot;) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-27" vertex="1">
+          <mxGeometry y="60" width="385" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-30" value="POTENCIA_CB: NUMERIC(3) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-27" vertex="1">
+          <mxGeometry y="90" width="385" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-31" value="NUM_COMPONENTES: NUMERIC (2) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-27" vertex="1">
+          <mxGeometry y="120" width="385" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-32" value="FECHA_ENTREGA: DATE (AAAA/MM/DD) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-27" vertex="1">
+          <mxGeometry y="150" width="385" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-33" value="TB_GRAN_PREMIO" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-805" y="600" width="380" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-34" value="PK (ID_GP): CADENA DE CARACTERES (5) NOT NULL UNIQUE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-33" vertex="1">
+          <mxGeometry y="30" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-35" value="ANO_CREACION_GP: DATE NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-33" vertex="1">
+          <mxGeometry y="60" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-36" value="FECHA_CARRERA: DATE (AAAA/MM/DD)&lt;br&gt;&amp;nbsp; NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-33" vertex="1">
+          <mxGeometry y="90" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-37" value="NUM_GANADORES:NUMERIC(3) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-33" vertex="1">
+          <mxGeometry y="120" width="380" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-38" value="TB_PILOTO_ESCUDERIA_CIRCUITO_PARTICIPA_GRAN_PREMIO" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-810" y="800" width="440" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-39" value="SUPERLICENCIA: NUMERIC (5) NOT NULL&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-38" vertex="1">
+          <mxGeometry y="30" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-40" value="ID_ESCUDERIA:CADENA DE CARACTERES (5) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-38" vertex="1">
+          <mxGeometry y="60" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-41" value="ID_GP: CADENA DE CARACTERES (5) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-38" vertex="1">
+          <mxGeometry y="90" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-42" value="ID_CIRCUITO:CADENA DE CARACTERES (5) 2 LETRAS-2NUMEROS [ES-01] NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-38" vertex="1">
+          <mxGeometry y="120" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-43" value="PK (SUPERLICENCIA, ID_ESCUDERIA, ID_GP)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-38" vertex="1">
+          <mxGeometry y="150" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-44" value="UNIQUE (SUPERLICENCIA, ID_ESCUDERIA, ID_GP)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-38" vertex="1">
+          <mxGeometry y="180" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-45" value="SUPERLICENCIA ES FK DE TABLA TB_PILOTO (SUPERLICENCIA)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-38" vertex="1">
+          <mxGeometry y="210" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-46" value="ID_ESCUDERIA ES FK DE TABLA TB_ESCUDERIA (ID_ESCUDERIA)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-38" vertex="1">
+          <mxGeometry y="240" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-47" value="ID_GP ES FK DE TABLA TB_GRAN_PREMIO (ID_GP)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-38" vertex="1">
+          <mxGeometry y="270" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-48" value="ID_CIRCUITO ES FK DE TABLA TB_CIRCUITO (ID_CIRCUITO)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-38" vertex="1">
+          <mxGeometry y="300" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-49" value="TB_DIRECCION" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-800" y="20" width="570" height="270" as="geometry">
+            <mxRectangle x="-430" y="760" width="110" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-50" value="PK (CODIGO_DIRECCION): numero(10) autoincrement (identity (1,1)) NOT NULL UNIQUE" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-49" vertex="1">
+          <mxGeometry y="30" width="570" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-51" value="TIPO_VIA: cadena de caracteres(25) LISTA(Calle, Avenida, Plaza, Carretera) NOT NULL DEFAULT &quot;Calle&quot;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-49" vertex="1">
+          <mxGeometry y="60" width="570" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-52" value="NOMBRE VIA: cadena de caracteres(100) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-49" vertex="1">
+          <mxGeometry y="90" width="570" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-53" value="NUMERO: numerico(3) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-49" vertex="1">
+          <mxGeometry y="120" width="570" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-54" value="CODIGO_POSTAL: cadena de caracteres(5) valores entre(01000 y 52999) NOT NULL&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-49" vertex="1">
+          <mxGeometry y="150" width="570" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-55" value="MUNICIPIO: cadena de caracteres (100) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-49" vertex="1">
+          <mxGeometry y="180" width="570" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-56" value="CIUDAD: cadena de caracteres (50) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-49" vertex="1">
+          <mxGeometry y="210" width="570" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_P7isNc2VPUhs7asRugc-57" value="PAIS: cadena de caracteres (50) LISTA (&quot;ESPAÑA&quot;, &quot;BÉLGICA&quot;, &quot;ITALIA&quot;, &quot;ESTADOS UNIDOS&quot;, &quot;FRANCIA&quot;, &quot;AUSTRIA&quot;, &quot;AUSTRALIA&quot;, &quot;JAPÓN&quot;, &quot;ARABIA SAUDI&quot;, &quot;BRASIL&quot;) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="_P7isNc2VPUhs7asRugc-49" vertex="1">
+          <mxGeometry y="240" width="570" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,152 @@
+use bd_formula1;
+go
+
+
+
+INSERT INTO tb_direccion (cod_direccion, tipo_via, nombre_via, numero_via, codigo_postal, municipio, ciudad, pais) VALUES 
+(1, 'CALLE', 'Circuit One', 123, 12345, 'Cityville', 'Ciudad Uno', 'ESPAÑA'),
+(2, 'AVENIDA', 'Speedway International', 456, 54321, 'Race City', 'Ciudad Dos', 'ITALIA'),
+(3, 'PLAZA', 'Grand Prix Square', NULL, 67890, 'Raceville', 'Ciudad Tres', 'FRANCIA'),
+(4, 'CARRETERA', 'Fast Lane Circuit', 789, 98765, 'Speedtown', 'Ciudad Cuatro', 'USA'),
+(5, 'CALLE', 'Turbo Street', 101, 13579, 'Quickville', 'Ciudad Cinco', 'ESPAÑA'),
+(6, 'AVENIDA', 'Rapid Avenue', 234, 24680, 'Sprint City', 'Ciudad Seis', 'JAPÓN'),
+(7, 'PLAZA', 'Pit Stop Plaza', NULL, 87654, 'Raceville', 'Ciudad Siete', 'AUSTRALIA'),
+(8, 'CARRETERA', 'Velocity Road', 321, 11223, 'Turbotown', 'Ciudad Ocho', 'ARABIA SAUDI'),
+(9, 'CALLE', 'Acceleration Street', 543, 99887, 'Fastburg', 'Ciudad Nueve', 'BRASIL'),
+(10, 'AVENIDA', 'Quick Circuit Avenue', 765, 33445, 'Race City', 'Ciudad Diez', 'USA'),
+(11, 'PLAZA', 'Finish Line Plaza', NULL, 55667, 'Sprintville', 'Ciudad Once', 'ESPAÑA'),
+(12, 'CARRETERA', 'Turbo Drive', 876, 11234, 'Speedburg', 'Ciudad Doce', 'FRANCIA'),
+(13, 'CALLE', 'Pole Position Street', 321, 99876, 'Quicktown', 'Ciudad Trece', 'ITALIA'),
+(14, 'AVENIDA', 'Fast Track Avenue', 654, 22334, 'Raceville', 'Ciudad Catorce', 'ARABIA SAUDI'),
+(15, 'PLAZA', 'Racing Plaza', NULL, 44556, 'Turboville', 'Ciudad Quince', 'USA');
+
+
+
+INSERT INTO tb_pilotos (superlicencia, nombre_piloto, apellido1_piloto, apellido2_piloto, peso, altura_cm, num_carreras, num_victorias) VALUES 
+(12345, 'Lewis', 'Hamilton', NULL, 70.5, 175, 100, 50),
+(23456, 'Sebastian', 'Vettel', NULL, 68.2, 180, 110, 40),
+(34567, 'Max', 'Verstappen', NULL, 67.8, 183, 90, 30),
+(45678, 'Valtteri', 'Bottas', NULL, 72.3, 178, 95, 20),
+(56789, 'Charles', 'Leclerc', NULL, 65.7, 177, 80, 15),
+(67890, 'Daniel', 'Ricciardo', NULL, 68.9, 182, 85, 10),
+(78901, 'Carlos', 'Sainz', 'Jr.', 68.0, 176, 75, 5),
+(89012, 'Lando', 'Norris', NULL, 66.5, 175, 70, 3),
+(90123, 'Fernando', 'Alonso', NULL, 71.2, 181, 120, 65),
+(12346, 'Kimi', 'Räikkönen', NULL, 70.8, 182, 130, 40),
+(23457, 'Esteban', 'Ocon', NULL, 68.5, 177, 60, 10),
+(34568, 'Sergio', 'Pérez', NULL, 69.4, 180, 70, 8),
+(45679, 'Nicholas', 'Latifi', NULL, 70.1, 183, 50, 2),
+(56780, 'George', 'Russell', NULL, 67.0, 176, 40, 1),
+(67891, 'Mick', 'Schumacher', NULL, 71.5, 184, 30, 0),
+(78902, 'Nikita', 'Mazepin', NULL, 68.7, 181, 20, 0),
+(89013, 'Yuki', 'Tsunoda', NULL, 65.9, 170, 10, 0),
+(90124, 'Pierre', 'Gasly', NULL, 67.3, 178, 55, 5),
+(12347, 'Fernando', 'Alonso', NULL, 69.0, 179, 110, 30),
+(23458, 'Lance', 'Stroll', NULL, 72.0, 185, 65, 5);
+
+
+INSERT INTO tb_gran_premio (id_gp, ano_creacion_gp, fecha_carrera, num_ganadores) VALUES 
+('GP001', '2000-01-15', '2000-03-20', 1),
+('GP002', '2001-02-20', '2001-05-10', 2),
+('GP003', '2002-03-25', '2002-06-15', 3),
+('GP004', '2003-04-30', '2003-07-20', 1),
+('GP005', '2004-05-12', '2004-08-25', 2),
+('GP006', '2005-06-18', '2005-09-30', 3),
+('GP007', '2006-07-24', '2006-10-10', 1),
+('GP008', '2007-08-30', '2007-11-18', 2),
+('GP009', '2008-09-05', '2008-12-22', 3),
+('GP010', '2009-10-10', '2009-01-15', 1),
+('GP011', '2010-11-15', '2010-02-28', 2),
+('GP012', '2011-12-20', '2011-04-10', 3),
+('GP013', '2012-01-25', '2012-05-18', 1),
+('GP014', '2013-02-28', '2013-07-10', 2),
+('GP015', '2014-03-10', '2014-08-22', 3),
+('GP016', '2015-04-15', '2015-09-30', 1),
+('GP017', '2016-05-20', '2016-10-05', 2),
+('GP018', '2017-06-25', '2017-11-15', 3),
+('GP019', '2018-07-30', '2018-12-05', 1),
+('GP020', '2019-09-05', '2019-02-18', 2);
+
+INSERT INTO tb_circuitos (id_circuito, nombre_circuito, cod_direccion, num_vueltas, km_circuitos, vuelta_rapida, num_aforo) VALUES 
+('BC-01', 'Circuit de Barcelona-Catalunya', 1, 66, 4.655, '00:01:21:670', 95000),
+('ME-02', 'Autódromo Hermanos Rodríguez', 2, 71, 4.304, '00:01:18:741', 11000),
+('MO-03', 'Monaco Street Circuit', 3, 78, 3.337, '00:01:14:260', 20000),
+('SA-04', 'Circuit de Spa-Francorchamps', 4, 44, 7.004, '00:01:46:286', 70000),
+('AK-05', 'Street Circuit Baku', 5, 51, 6.003, '00:01:43:009', 60000),
+('SI-06', 'Marina Bay Street Circuit', 6, 61, 5.063, '00:01:41:905', 80000),
+('AU-07', 'Yas Marina Circuit', 7, 55, 5.554, '00:01:39:283', 41000),
+('HN-08', 'Hungaroring', 8, 70, 4.381, '00:01:19:071', 70000),
+('SI-09', 'Sochi Autodrom', 9, 53, 5.848, '00:01:37:030', 55000),
+('SA-10', 'Shanghai International Circuit', 10, 56, 5.451, '00:01:32:238', 20000),
+('PA-11', 'Circuit de Paul Ricard', 11, 53, 5.842, '00:01:32:740', 16000),
+('BH-12', 'Bahrain International Circuit', 12, 57, 5.412, '00:01:31:447', 50000),
+('ST-13', 'Istanbul Park Circuit', 13, 58, 5.338, '00:01:36:279', 41000),
+('ML-14', 'Melbourne Grand Prix Circuit', 14, 58, 5.303, '00:01:24:125', 10000),
+('BR-15', 'Barcelona Street Circuit', 15, 66, 4.655, '00:01:21:670', 95000);
+
+INSERT INTO tb_motoristas (id_motor, marca, potencia_cv, num_componentes, fecha_entrega) VALUES 
+('M101', 'MERCEDES', 800, 38, '2000-03-10'),
+('M102', 'HONDA', 757, 32, '2001-05-20'),
+('M103', 'FERRARI', 820, 56, '2002-08-15'),
+('M104', 'RENAULT', 780, 87, '2003-12-05'),
+('M105', 'AUDI', 771, 4, '2004-09-30'),
+('M106', 'MERCEDES', 810, 18, '2005-02-28'),
+('M107', 'HONDA', 760, 48, '2006-07-10'),
+('M108', 'FERRARI', 839, 53, '2007-11-18'),
+('M109', 'RENAULT', 790, 66, '2008-10-02'),
+('M110', 'AUDI', 787, 90, '2009-04-15'),
+('M111', 'MERCEDES', 820, 17, '2010-08-22'),
+('M112', 'HONDA', 775, 81, '2011-06-12'),
+('M113', 'FERRARI', 844, 74, '2012-09-30'),
+('M114', 'RENAULT', 800, 99, '2013-12-20'),
+('M115', 'AUDI', 790, 7, '2014-02-10'),
+('M116', 'MERCEDES', 830, 77, '2015-05-18'),
+('M117', 'HONDA', 782, 80, '2016-08-25'),
+('M118', 'FERRARI', 855, 23, '2017-11-15'),
+('M119', 'RENAULT', 810, 94, '2018-10-05'),
+('M120', 'AUDI', 800, 11, '2019-04-02');
+
+INSERT INTO tb_escuderias (id_escuderia, id_motor, nombre_escuderia, nombre_jefe, ano_creacion, num_pilotos) VALUES 
+('E001', 'M101', 'Mercedes Racing', 'John Smith', '2000-01-15', 2),
+('E002', 'M102', 'Honda Team', 'Emily Johnson', '2001-03-20', 3),
+('E003', 'M103', 'Ferrari Racing', 'Michael Anderson', '2002-05-10', 2),
+('E004', 'M104', 'Renault Racing', 'Sophia Brown', '2003-07-25', 3),
+('E005', 'M105', 'Audi Motorsport', 'Daniel White', '2004-09-12', 2),
+('E006', 'M106', 'Mercedes Racing', 'Olivia Davis', '2005-11-18', 3),
+('E007', 'M107', 'Honda Team', 'William Taylor', '2006-02-10', 2),
+('E008', 'M108', 'Ferrari Racing', 'Emma Miller', '2007-04-15', 3),
+('E009', 'M109', 'Renault Racing', 'James Wilson', '2008-06-22', 2),
+('E010', 'M110', 'Audi Motorsport', 'Sophie Smith', '2009-08-30', 3),
+('E011', 'M111', 'Mercedes Racing', 'David Johnson', '2010-10-05', 2),
+('E012', 'M112', 'Honda Team', 'Isabella Davis', '2011-12-18', 3),
+('E013', 'M113', 'Ferrari Racing', 'Matthew White', '2012-02-28', 2),
+('E014', 'M114', 'Renault Racing', 'Ava Taylor', '2013-04-10', 3),
+('E015', 'M115', 'Audi Motorsport', 'Noah Brown', '2014-06-15', 2),
+('E016', 'M116', 'Mercedes Racing', 'Lily Johnson', '2015-08-22', 3),
+('E017', 'M117', 'Honda Team', 'Ethan Davis', '2016-10-30', 2),
+('E018', 'M118', 'Ferrari Racing', 'Chloe Wilson', '2017-12-05', 3),
+('E019', 'M119', 'Renault Racing', 'Mia Miller', '2018-02-18', 2),
+('E020', 'M120', 'Audi Motorsport', 'Jack Smith', '2019-04-30', 3);
+
+
+INSERT INTO tb_piloto_escuderia_circuito_participa_gran_premio (superlicencia, id_gp, id_circuito, id_escuderia) VALUES 
+(12345, 'GP001', 'BC-01', 'E001'),
+(23456, 'GP002', 'ME-02', 'E002'),
+(34567, 'GP003', 'MO-03', 'E003'),
+(45678, 'GP004', 'SA-04', 'E004'),
+(56789, 'GP005', 'AK-05', 'E005'),
+(67890, 'GP006', 'SI-06', 'E006'),
+(78901, 'GP007', 'AU-07', 'E007'),
+(89012, 'GP008', 'HN-08', 'E008'),
+(90123, 'GP009', 'SI-09', 'E009'),
+(12346, 'GP010', 'SA-10', 'E010'),
+(23457, 'GP011', 'PA-11', 'E011'),
+(34568, 'GP012', 'BH-12', 'E012'),
+(45679, 'GP013', 'ST-13', 'E013'),
+(56780, 'GP014', 'ML-14', 'E014'),
+(67891, 'GP015', 'BR-15', 'E015'),
+(78902, 'GP016', 'BC-01', 'E016'),
+(89013, 'GP017', 'ME-02', 'E017'),
+(90124, 'GP018', 'MO-03', 'E018'),
+(12347, 'GP019', 'SA-04', 'E019'),
+(23458, 'GP020', 'AK-05', 'E020');

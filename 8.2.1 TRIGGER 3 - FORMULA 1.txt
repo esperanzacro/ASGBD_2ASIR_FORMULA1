@@ -1,0 +1,19 @@
+ALTER TABLE tb_circuitos
+ADD tiempo_promedio_vuelta TIME;
+
+
+
+CREATE TRIGGER calcular_tiempo_promedio_vuelta
+ON tb_circuitos
+AFTER INSERT, UPDATE
+AS
+BEGIN
+
+    UPDATE tb_circuitos
+    SET tiempo_promedio_vuelta = CONVERT(TIME, DATEADD(SECOND, DATEDIFF(SECOND, 0, vuelta_rapida) / num_vueltas, 0))
+END;
+
+INSERT INTO tb_circuitos (id_circuito, nombre_circuito, cod_direccion, num_vueltas, km_circuitos, vuelta_rapida, num_aforo) 
+VALUES ('CI-01', 'Nuevo Circuito', 1, 66, 4.5, '00:01:30.000', 50000);
+
+SELECT * FROM tb_circuitos WHERE id_circuito = 'CI-01';

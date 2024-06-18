@@ -1,0 +1,35 @@
+--Disparador 1: Restricción de Pilotos
+
+
+
+--Sentencia de Creación:
+CREATE TRIGGER trg_before_insert_pilotos
+ON tb_pilotos
+INSTEAD OF INSERT
+AS
+BEGIN
+    IF EXISTS (
+        SELECT 1 
+        FROM tb_pilotos p
+        JOIN inserted i ON p.nombre_piloto = i.nombre_piloto 
+                       AND p.apellido1_piloto = i.apellido1_piloto 
+                       AND p.apellido2_piloto = i.apellido2_piloto
+    )
+    BEGIN
+        RAISERROR('Piloto ya existe con el mismo nombre y apellidos', 16, 1);
+        ROLLBACK TRANSACTION;
+    END
+    ELSE
+    BEGIN
+        INSERT INTO tb_pilotos (superlicencia, nombre_piloto, apellido1_piloto, apellido2_piloto, peso, altura_cm, num_carreras, num_victorias)
+        SELECT superlicencia, nombre_piloto, apellido1_piloto, apellido2_piloto, peso, altura_cm, num_carreras, num_victorias
+        FROM inserted;
+    END
+END;
+
+--Sentencia para Provocar el Disparador:
+INSERT INTO tb_pilotos (superlicencia, nombre_piloto, apellido1_piloto, apellido2_piloto, peso, altura_cm, num_carreras, num_victorias) 
+VALUES (23459, 'Fernando', 'Alonso', NULL, 69.0, 179, 110, 30);
+
+--Resultados:
+SELECT * FROM tb_pilotos;

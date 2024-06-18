@@ -1,0 +1,42 @@
+1. Obtener la diferencia en días entre la fecha de entrega y la fecha actual para
+los motores cuya potencia se encuentra en el rango de 750 a 820 cv, el número 
+de componentes es superior a 30 y la fecha de entrega es anterior o igual al
+año actual.
+
+2. Seleccionar las direcciones de cualquier tipo de vía cuyo nombre de vía no 
+comience ni por R ni por V, y cuyo código postal sea par y ordenar de manera inversa.
+
+3. Seleccionar los pilotos cuyo nombre no comienza ni por R, ni  por V, ni por P, ni por F, y 
+haya participado en un número de carreras par, y mida entre 175 y 183 cm. Se pide mostrar su nombre,
+apellidos, peso, altura, número de carreras y se suma el total de victorias de cada piloto.
+Ordenado por la superlicencia de mayor a menor.
+
+4. Seleccionar el nombre de los circuitos cuyos nombres comienzan por C, B o M, que tienen  más de 55 vueltas y se pide
+además, calcular el tiempo promedia de la vuelta rápida de cada circuito.
+
+5. Calcular la suma total de las vueltas, la media de la longitud de los circuitos y el máximo aforo 
+entre todos los circuitos.
+
+6. Seleccionar el ID del gran premio, calcular los años desde la fecha de creación, mostrar
+el mes en el que se  celebra la carrera. Mostrar la fecha de la carrera en un formato yyyy-mm-dd específico
+utilizando para aquellos registros cuyo año de creación esté entre el 2000 y el 2010.
+
+
+7. alcular la media de altura y peso entre los pilotos cuya superlicencia empieza por un número par.
+
+
+8. Calcula la media de la potencia y los componentes según la marca.
+
+
+9. Direcciones con número de vía impar y tipo de vía diferente de Calle.
+
+
+10. Ejercicio donde el nombre de la vía comience por una F, tenga una A en alguna de las posiciones,
+donde USA sea el país y el municipio termine 7en n.
+
+
+11. Obtén la cantidad de direcciones por país y muestra únicamente aquellos países que tienen más de una dirección.
+
+
+
+

@@ -1,0 +1,31 @@
+--Disparador 2: Campo Calculado
+
+
+--Sentencia de Creación:
+CREATE TABLE tb_estadisticas (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    total_victorias INT NOT NULL
+);
+
+INSERT INTO tb_estadisticas (total_victorias) VALUES (0);
+
+CREATE TRIGGER trg_after_insert_pilotos
+ON tb_pilotos
+AFTER INSERT
+AS
+BEGIN
+    UPDATE tb_estadisticas
+    SET total_victorias = (
+        SELECT SUM(num_victorias)
+        FROM tb_pilotos
+    );
+END;
+
+--Sentencia para Provocar el Disparador:
+INSERT INTO tb_pilotos (superlicencia, nombre_piloto, apellido1_piloto, apellido2_piloto, peso, altura_cm, num_carreras, num_victorias) 
+VALUES (23460, 'New', 'Pilot', NULL, 70.0, 180, 50, 5);
+
+--Resultados:
+SELECT * FROM tb_pilotos;
+SELECT * FROM tb_estadisticas;
+

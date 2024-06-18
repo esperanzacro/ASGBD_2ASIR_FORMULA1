@@ -1,0 +1,94 @@
+1. Pensé en que al tener que meter las id’s de forma manual para los circuitos, podrían haber erratas a la hora de poner el guión, que no estuviera bien definido u otras cuestiones, para ello he querido mantener el orden en nuestra bd sin necesidad de tener que hacer un check.
+
+-- Funcion definitoria del campo
+
+use bd_f1_sergio_ivan_raul;
+go
+
+CREATE FUNCTION dbo.validar_formato_id_circuito(@id_circuito VARCHAR(5))
+RETURNS INT
+AS
+BEGIN
+    DECLARE @validacion INT = 0;
+
+    IF @id_circuito NOT LIKE '[A-Z][A-Z]-[0-9][0-9]'
+    BEGIN
+        SET @validacion = 1;
+    END;
+
+    RETURN @validacion;
+END;
+
+-- Trigger simple (explicado el motivo de creación en el documento)
+
+CREATE TRIGGER trigger_simple_validar_formato_id_circuito
+ON tb_circuitos
+AFTER INSERT, UPDATE
+AS
+BEGIN
+	SET NOCOUNT ON;
+    DECLARE @id_circuito VARCHAR(5);
+    SELECT @id_circuito = id_circuito FROM inserted;
+    IF dbo.validar_formato_id_circuito(@id_circuito) = 1
+    BEGIN
+        RAISERROR ('El ID del circuito debe tener el formato correcto: XX-99', 16, 1);
+		ROLLBACK TRANSACTION;
+    END;
+END;
+
+-- Trigger complejo (explicado el motivo de creación en el documento)
+
+CREATE OR ALTER TRIGGER trigger_validar_formato_id_circuito
+ON tb_circuitos
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    DECLARE @id_circuito VARCHAR(5);
+    DECLARE @error_count INT = 0;
+    DECLARE @row_count INT = (SELECT COUNT(*) FROM inserted);
+    DECLARE @current_row INT = 1;
+    
+    WHILE @current_row <= @row_count
+    BEGIN
+        SELECT @id_circuito = id_circuito FROM (
+            SELECT *, ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS row_num FROM inserted
+        ) AS temp WHERE row_num = @current_row;
+        IF dbo.validar_formato_id_circuito(@id_circuito) = 1
+        BEGIN
+            RAISERROR ('El ID del circuito debe tener el formato correcto: XX-99', 16, 1);
+            SET @error_count = @error_count + 1;
+        END;
+        SET @current_row = @current_row + 1;
+    END;
+    IF @error_count > 0
+    BEGIN
+        ROLLBACK TRANSACTION;
+    END;
+END;
+
+-- Insercion tabla
+
+INSERT INTO tb_circuitos
+VALUES
+	('ES-24', 'Montmeló', 1111, 66, 4.67, '00:01:27.189', 50000),
+	('BE-24', 'Spa Francorchamps', 2222, 47, 7.23, '00:01:48.984', 45000),
+	('BR24', 'Brasil', 2222, 74, 2.80, '00:01:01.112', 9712),
+	('IT-24', 'Monza', 3333, 72, 2.67, '00:01:11.175', 76000),
+	('LV-24', 'Las Vegas', 4444, 71, 4.10, '00:01:50.202', 35000),
+	('AS-24', 'Albert Park', 4444, 53, 3.14, '00:01:34.112', 88711);
+
+-- Comandos "necesarios"
+
+- Para borrar la funcion en caso de ser necesario:
+
+drop function dbo.validar_formato_id_circuito;
+
+- Parar borrar los triggers en caso de ser necesario: 
+
+drop trigger trigger_simple_validar_formato_id_circuito;
+drop trigger trigger_validar_formato_id_circuito;
+
+- Para borrar los inserts en caso de ser necesario:
+
+delete from tb_circuitos; 

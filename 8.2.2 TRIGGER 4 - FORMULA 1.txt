@@ -1,0 +1,17 @@
+CREATE TRIGGER asegurar_num_vueltas_positivo
+ON tb_circuitos
+AFTER INSERT, UPDATE
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM inserted WHERE num_vueltas <= 0)
+    BEGIN
+        RAISERROR ('El número de vueltas debe ser mayor que cero.', 16, 1);
+        ROLLBACK TRANSACTION;
+        RETURN;
+    END
+END;
+
+
+
+INSERT INTO tb_circuitos (id_circuito, nombre_circuito, cod_direccion, num_vueltas, km_circuitos, vuelta_rapida, num_aforo) 
+VALUES ('CI-01', 'Nuevo Circuito', 1, 0, 4.5, '00:01:30.000', 50000);
