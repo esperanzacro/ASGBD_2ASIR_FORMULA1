@@ -1,4 +1,5 @@
-use bd_f1_sergio_ivan_raulprueba2
+use bd_formula1;
+go
 
 
 SET STATISTICS TIME ON;
