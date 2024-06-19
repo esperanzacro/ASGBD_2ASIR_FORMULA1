@@ -1,7 +1,7 @@
 use bd_formula1;
 go
 
--- añado algo desde la web de github
+-- añado algo desde la web de github, estoy modificando la misma linea desde local
 
 INSERT INTO tb_direccion (cod_direccion, tipo_via, nombre_via, numero_via, codigo_postal, municipio, ciudad, pais) VALUES 
 (1, 'CALLE', 'Circuit One', 123, 12345, 'Cityville', 'Ciudad Uno', 'ESPAÑA'),
